@@ -25,17 +25,17 @@
             <!-- Form prompting user to enter city name to search-->
             <form class = "pb-3 border-bottom border-dark search-form d-flex flex-column" id="search-form">
                 <label id = "search-label">Search for a City:</label>
-                <input class ="p-1" id = "search-input" name="city" type="text" placeholder = "Austin"></input>
-                <input class = "mt-3 w-100" id = "search-btn" type="submit" value = "Search"></input>
+                <input class ="p-1" id = "search-input" name="city" type="text" placeholder = "City Name"></input>
+                <button class = "mt-3" id="search-btn" type="button">Search</button>
             </form>
 
             <!-- Will display buttons of past city searches-->
-            <div class = "d-flex flex-column" id="history">
-                <!-- PLACEHOLDERS, MAKE SURE TO DELETE-->
+            <div class = "d-flex flex-column" id="historyList">
+                <!--PLACEHOLDERS, MAKE SURE TO DELETE
                 <button class = "history-btn mt-3">Austin</button>
                 <button class = "history-btn mt-3">Chicago</button>
                 <button class = "history-btn mt-3">New York</button>
-                <button class = "history-btn mt-3">Orlando</button>
+                <button class = "history-btn mt-3">Orlando</button>-->
             </div>
         </div>
 
@@ -99,5 +99,7 @@
             </div>
         </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
