@@ -1,0 +1,128 @@
+#page-header{
+ background-image: linear-gradient(to right, rgb(59, 110, 196), rgb(35, 5, 85));
+ color: white;  
+}
+
+#title{
+    font-size: 28px;
+}
+
+/* Custom CSS for the form and history section below it*/
+#search-label{
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+#search-input{
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+#search-btn{
+    background-color: rgb(90,162,233);
+    color: white;
+    border:none;
+    border-radius: 3px;
+}
+
+.history-btn{
+    background-color: rgb(183,183,183);
+    border:none;
+    border-radius: 3px;
+}
+
+/*Custom CSS for the right column*/
+#left-col, #right-col{
+    padding: 0px;
+}
+
+#left-col{
+    padding-right: 10px;
+}
+
+#right-col{
+    padding-left:10px;
+}
+
+#banner-title{
+    font-size: 20px;
+    font-weight:bolder;
+}
+
+/*Styling for banner with current date information*/
+.banner-text{
+    font-size: 16px;
+    line-height: 18px;
+}
+
+#index-fav{
+    background-color: rgb(21,126,81);
+}
+
+#index-mod{
+    background-color: yellow;
+}
+
+#index-severe{
+    background-color: red;
+}
+
+.index{
+    padding: 2px 5px 2px 5px;
+    border-radius: 3px;
+    border:none;
+    color: white;
+    font-size: 10px;
+}
+
+#forcast-title{
+    font-size: 16px;
+    font-weight:bolder;
+}
+
+/*CSS for the cards with the weather information*/
+.card{
+    background-color: rgb(51,71,90);
+    color: white;
+}
+
+.card-text{
+    line-height: 15px;
+    font-size: 14px;
+}
+
+/*Media queries for font sizes and flex direction for cards*/
+@media only screen and (max-width: 1200px){
+    #search-label{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    #search-label{
+        font-size: 16px;
+    }
+
+    .card{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 576){
+    
+    #left-col, #right-col{
+        padding: 0px 0px 0px 0px;
+        margin: 0px;
+    }
+
+    #left-col{
+        padding-right: 0px;
+    }
+
+    #right-col{
+        padding-left: 0px;
+    }
+}
+
+
