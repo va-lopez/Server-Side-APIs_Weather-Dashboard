@@ -14,14 +14,14 @@
 
 <body class = "container-fluid">
     <!-- Header with a gradient bg-->
-    <header>
+    <header class = "w-100">
         <h1 class = "text-center">Weather Dashboard</h1>
     </header>
     
     <!-- The main body of the content containing a left and right section-->
-    <main class = "d-flex flex-row">
+    <main class = "d-flex flex-sm-row flex-column">
         <!-- left container with search and history-->
-        <div class = "w-100" id = "right-col"> <!--col-sm-3 -->
+        <div class = "w-sm-100 mb-4 col-12 col-sm-2" id = "right-col"> <!--col-sm-3 -->
             <!-- Form prompting user to enter city name to search-->
             <form class = "pb-3 border-bottom border-dark search-form d-flex flex-column" id="search-form">
                 <label id = "search-label w-100">Search for a City:</label>
@@ -40,7 +40,7 @@
         </div>
 
         <!-- information regarding entered city-->
-        <div class = "col-9 ml-2" id = "left-col">
+        <div class = "col-sm-10 ml-sm-2" id = "left-col">
             <div class = "banner border border-dark p-1 w-100">
                 <h3 class = "city-name"> Placeholder City Name <span class = "current-date"></span><span class="oi oi-cloud"></span> </h3>
                 <p class = "city-temp"> Temp : </p>
@@ -51,9 +51,9 @@
             <!-- Heading for cards-->
             <h4 class = "w-100 mt-3 mb-3"> 5-Day Forcast: </h4>
             <!--Cards with rest of week weather info-->
-            <div class = "5day-container d-flex flex-row justify-content-between align-items-baseline">
+            <div class = "5day-container d-flex flex-md-row justify-content-between align-items-baseline flex-column">
                 <!-- 1 day after banner date-->
-                <div class = "card col day-1 mr-2 p-1">
+                <div class = "card col day-1 mr-sm-2 mb-3 p-1">
                     <h6 class ="card-title"> Date +1 </h6>
                     <span class="oi oi-cloudy weather-icon"></span>
                     <p class = "card-text city-temp"> Temp: </p>
@@ -62,7 +62,7 @@
                 </div>
 
                 <!-- 2 days after banner date-->
-                <div class = "card col day-2 mr-2 p-1">
+                <div class = "card col day-2 mr-sm-2 mb-3 p-1">
                     <h6 class ="card-title"> Date +1 </h6>
                     <span class="oi oi-cloudy weather-icon"></span>
                     <p class = "card-text city-temp"> Temp: </p>
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- 3 days after banner date-->
-                <div class = "card col day-3 mr-2 p-1">
+                <div class = "card col day-3 mr-sm-2 mb-3 p-1">
                     <h6 class ="card-title"> Date +1 </h6>
                     <span class="oi oi-cloudy weather-icon"></span>
                     <p class = "card-text city-temp"> Temp: </p>
@@ -80,7 +80,7 @@
                 </div>
 
                 <!-- 4 days after banner date-->
-                <div class = "card col day-4 mr-2 p-1">
+                <div class = "card col day-4 mr-sm-2 mb-3 p-1">
                     <h6 class ="card-title"> Date +1 </h6>
                     <span class="oi oi-cloudy weather-icon"></span>
                     <p class = "card-text city-temp"> Temp: </p>
@@ -89,7 +89,7 @@
                 </div>
 
                 <!-- 5 days after banner date-->
-                <div class = "card col day-5 p-1">
+                <div class = "card col day-5 mb-3 p-1">
                     <h6 class ="card-title"> Date +1 </h6>
                     <span class="oi oi-cloudy weather-icon"></span>
                     <p class = "card-text city-temp"> Temp: </p>
