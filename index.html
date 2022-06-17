@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
+
 <body class = "container-fluid">
     <!-- Header with a gradient bg-->
     <header>
@@ -18,79 +19,82 @@
     </header>
     
     <!-- The main body of the content containing a left and right section-->
-    <main class = "row ">
-        <div class = "col-2 col-sm-3 d-flex flex-column">
+    <main class = "d-flex flex-row">
+        <!-- left container with search and history-->
+        <div class = "w-100" id = "right-col"> <!--col-sm-3 -->
             <!-- Form prompting user to enter city name to search-->
-            <div class = "row">
-            <form class ="mx-auto  ">
-                <label class = "col align-self-center text-left">Search for a City:</label>
-                <input class = "col align-self-center"> </form>
-                <button class = "col align-self-center"> Search</button>
+            <form class = "pb-3 border-bottom border-dark search-form d-flex flex-column" id="search-form">
+                <label id = "search-label w-100">Search for a City:</label>
+                <input id = "search-input w-100" name="city" type="text" placeholder = "Austin"></input>
+                <input class = "mt-3 w-100 search-btn" type="submit" value = "Search"></input>
             </form>
-            </div>
+
             <!-- Will display buttons of past city searches-->
-            <div class = "history d-flex flex-column mt-2">
-                <!-- Enter button placeholders, will be added dyanmically later-->
-                <button class = "pt-1 m-2">Austin</button>
-                <button class = "pt-1 m-2">Chicago</button>
-                <button class = "pt-1 m-2">New York</button>
-                <button class = "pt-1 m-2">Orlando</button>
+            <div class = "d-flex flex-column" id="history">
+                <!-- PLACEHOLDERS, MAKE SURE TO DELETE-->
+                <button class = "history-btn mt-3">Austin</button>
+                <button class = "history-btn mt-3">Chicago</button>
+                <button class = "history-btn mt-3">New York</button>
+                <button class = "history-btn mt-3">Orlando</button>
             </div>
         </div>
+
         <!-- information regarding entered city-->
-        <div class = "col-10 col-sm-9 right-col justify-content-around">
-            <div class = "weather-today border p-1 w">
-                <h3> Placeholder City Name </h3>
-                <p> Temp : </p>
-                <p> Wind : </p>
-                <p> Humidity </p>
-                <p> UV index: <span> sam # </span> </p>
+        <div class = "col-9 ml-2" id = "left-col">
+            <div class = "banner border border-dark p-1 w-100">
+                <h3 class = "city-name"> Placeholder City Name <span class = "current-date"></span><span class="oi oi-cloud"></span> </h3>
+                <p class = "city-temp"> Temp : </p>
+                <p class = "city-wind"> Wind : </p>
+                <p class = "city-humidity"> Humidity </p>
+                <p class = "city-UV"> UV index: <span class ="index-num">index</span></p>
             </div>
-
-            <h4> 5-Day Forcast: </h4>
-            <div class = "row d-flex justify-content-around">
-                <div class = "card col m-1">
-                    <p class ="card-header"> Date +1 </p>
-                    <div class = "card-body">
-                        <p> Temp: </p>
-                        <p> Wind: </p>
-                        <p> Humidity</p>
-                    </div>
+            <!-- Heading for cards-->
+            <h4 class = "w-100 mt-3 mb-3"> 5-Day Forcast: </h4>
+            <!--Cards with rest of week weather info-->
+            <div class = "5day-container d-flex flex-row justify-content-between align-items-baseline">
+                <!-- 1 day after banner date-->
+                <div class = "card col day-1 mr-2 p-1">
+                    <h6 class ="card-title"> Date +1 </h6>
+                    <span class="oi oi-cloudy weather-icon"></span>
+                    <p class = "card-text city-temp"> Temp: </p>
+                    <p class = "card-text city-wind"> Wind: </p>
+                    <p class = "card-text city-humidity"> Humidity</p>
                 </div>
 
-            <div class = "card col m-1">
-                <p class ="card-header"> Date +1 </p>
-                <div class = "card-body">
-                    <p> Temp: </p>
-                    <p> Wind: </p>
-                    <p> Humidity</p>
+                <!-- 2 days after banner date-->
+                <div class = "card col day-2 mr-2 p-1">
+                    <h6 class ="card-title"> Date +1 </h6>
+                    <span class="oi oi-cloudy weather-icon"></span>
+                    <p class = "card-text city-temp"> Temp: </p>
+                    <p class = "card-text city-wind"> Wind: </p>
+                    <p class = "card-text city-humidity"> Humidity</p>
                 </div>
-            </div>
 
-            <div class = "card col m-1">
-                <p class ="card-header"> Date +1 </p>
-                <div class = "card-body">
-                    <p> Temp: </p>
-                    <p> Wind: </p>
-                    <p> Humidity</p>
+                <!-- 3 days after banner date-->
+                <div class = "card col day-3 mr-2 p-1">
+                    <h6 class ="card-title"> Date +1 </h6>
+                    <span class="oi oi-cloudy weather-icon"></span>
+                    <p class = "card-text city-temp"> Temp: </p>
+                    <p class = "card-text city-wind"> Wind: </p>
+                    <p class = "card-text city-humidity"> Humidity</p>
                 </div>
-            </div>
 
-            <div class = "card col m-1">
-                <p class ="card-header"> Date +1 </p>
-                <div class = "card-body">
-                    <p> Temp: </p>
-                    <p> Wind: </p>
-                    <p> Humidity</p>
+                <!-- 4 days after banner date-->
+                <div class = "card col day-4 mr-2 p-1">
+                    <h6 class ="card-title"> Date +1 </h6>
+                    <span class="oi oi-cloudy weather-icon"></span>
+                    <p class = "card-text city-temp"> Temp: </p>
+                    <p class = "card-text city-wind"> Wind: </p>
+                    <p class = "card-text city-humidity"> Humidity</p>
                 </div>
-            </div>
 
-            <div class = "card col m-1">
-                <p class ="card-header"> Date +1 </p>
-                <div class = "card-body">
-                    <p> Temp: </p>
-                    <p> Wind: </p>
-                    <p> Humidity</p>
+                <!-- 5 days after banner date-->
+                <div class = "card col day-5 p-1">
+                    <h6 class ="card-title"> Date +1 </h6>
+                    <span class="oi oi-cloudy weather-icon"></span>
+                    <p class = "card-text city-temp"> Temp: </p>
+                    <p class = "card-text city-wind"> Wind: </p>
+                    <p class = "card-text city-humidity"> Humidity</p>
                 </div>
             </div>
         </div>
