@@ -42,7 +42,7 @@
         <!-- information regarding entered city-->
         <div class = "col-m-10 col-sm-9 pr-sm-2" id = "right-col">
             <div class = "banner border border-dark p-1 w-100">
-                <h2 class = "city-name" id="banner-title"> Placeholder City Name <span class = "current-date"></span><span class="oi oi-cloud" id="cloud"></span> </h2>
+                <h2 class = "city-name" id="banner-title"><span id="cityName"></span><span id = "current-date"></span><span class="oi oi-cloud" id="cloud"></span> </h2>
                 <p class = "city-temp banner-text"> Temp : </p>
                 <p class = "city-wind banner-text"> Wind : </p>
                 <p class = "city-humidity banner-text"> Humidity </p>
@@ -54,7 +54,7 @@
             <div class = "5day-container d-flex flex-sm-row justify-content-between align-items-baseline flex-sm-nowrap flex-wrap">
                 <!-- 1 day after banner date-->
                 <div class = "card col-sm col-5 day-1 mr-sm-2 mb-3 p-1">
-                    <h6 class ="card-title"> Date +1 </h6>
+                    <h6 class ="card-title"></h6>
                     <span class="oi oi-cloudy weather-icon mb-3"></span>
                     <p class = "card-text city-temp flex-wrap"> Temp: </p>
                     <p class = "card-text city-wind flex-wrap"> Wind: </p>
@@ -63,7 +63,7 @@
 
                 <!-- 2 days after banner date-->
                 <div class = "card col-sm col-5 day-2 mr-sm-2 mb-3 p-1">
-                    <h6 class ="card-title"> Date +1 </h6>
+                    <h6 class ="card-title"></h6>
                     <span class="oi oi-cloudy weather-icon mb-3"></span>
                     <p class = "card-text city-temp flex-wrap"> Temp: </p>
                     <p class = "card-text city-wind flex-wrap"> Wind: </p>
@@ -72,7 +72,7 @@
 
                 <!-- 3 days after banner date-->
                 <div class = "card col-sm col-5 day-3 mr-sm-2 mb-3 p-1">
-                    <h6 class ="card-title"> Date +1 </h6>
+                    <h6 class ="card-title"></h6>
                     <span class="oi oi-cloudy weather-icon mb-3"></span>
                     <p class = "card-text city-temp flex-wrap"> Temp: </p>
                     <p class = "card-text city-wind flex-wrap"> Wind: </p>
@@ -81,7 +81,7 @@
 
                 <!-- 4 days after banner date-->
                 <div class = "card col-sm col-5 day-4 mr-sm-2 mb-3 p-1">
-                    <h6 class ="card-title"> Date +1 </h6>
+                    <h6 class ="card-title"></h6>
                     <span class="oi oi-cloudy weather-icon mb-3"></span>
                     <p class = "card-text city-temp flex-wrap"> Temp: </p>
                     <p class = "card-text city-wind flex-wrap"> Wind: </p>
@@ -90,7 +90,7 @@
 
                 <!-- 5 days after banner date-->
                 <div class = "card col-sm  col-5 day-5 mb-3 p-1">
-                    <h6 class ="card-title"> Date +1 </h6>
+                    <h6 class ="card-title"></h6>
                     <span class="oi oi-cloudy weather-icon mb-3"></span>
                     <p class = "card-text city-temp flex-wrap"> Temp: </p>
                     <p class = "card-text city-wind flex-wrap"> Wind: </p>
@@ -100,6 +100,7 @@
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/luxon.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
