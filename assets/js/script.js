@@ -195,14 +195,14 @@ $("#search-btn").on("click", function(event){
         }
         currentCity = cityWords.join(" ");
 
-        //cityHistory.push(currentCity);
+        cityHistory.push(currentCity);
 
         //Add the city name into the banner text
         $("#cityName").text(currentCity);    
 
         //immedietely add the search as a button to refer to later
         addToHistory(currentCity);
-        //saveHistory();
+        saveHistory();
         getLocationApi(currentCity);
     }
 });
