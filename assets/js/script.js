@@ -91,6 +91,7 @@ var loadHistory = function(){
     cityHistory = JSON.parse(localStorage.getItem("cityHistory"));
     if(!cityHistory)
         return false;
+
     for(var i=0; i<cityHistory.length; i++){
         addToHistory(cityHistory[i]);
     }
@@ -191,8 +192,7 @@ $("#search-btn").on("click", function(event){
         }
         currentCity = cityWords.join(" ");
 
-        console.log(currentCity);
-        cityHistory.push(currentCity);
+        cityHistory?.push(currentCity);
         //Add the city name into the banner text
         $("#cityName").text(currentCity);    
 
