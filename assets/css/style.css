@@ -53,11 +53,18 @@
 /*Styling for banner with current date information*/
 .banner-text{
     font-size: 16px;
-    line-height: 18px;
+    line-height: 30px;
+}
+.index{
+    padding: 2px 5px 2px 5px;
+    border-radius: 3px;
+    border:none;
+    font-size: 12px;
 }
 
 #index-fav{
     background-color: rgb(21,126,81);
+    color:white;
 }
 
 #index-mod{
@@ -66,14 +73,7 @@
 
 #index-severe{
     background-color: red;
-}
-
-.index{
-    padding: 2px 5px 2px 5px;
-    border-radius: 3px;
-    border:none;
-    color: white;
-    font-size: 10px;
+    color:white;
 }
 
 #forcast-title{
