@@ -170,7 +170,7 @@ var updateInfo = function(index){
         $('.day'+i+'-temp').text('Temp: '+week[i].temp +'°');
         $('.day'+i+'-wind').text('Wind: '+week[i].wind +' MPH');
         $('.day'+i+'-humidity').text('Humidity: '+week[i].humidity +" %");
-        $('.day'+i+'-icons').attr('src','http://openweathermap.org/img/wn/'+week[i].icon+'@2x.png');
+        $('.day'+i+'-icons').attr('src','https://openweathermap.org/img/wn/'+week[i].icon+'@2x.png');
         if(i===0){
             $('.day0-uv').html('UV index: <span class = "index">'+ week[0].uvindex + '</span>');
             updateUVColor();
@@ -195,14 +195,14 @@ $("#search-btn").on("click", function(event){
         }
         currentCity = cityWords.join(" ");
 
-        cityHistory.push(currentCity);
+        //cityHistory.push(currentCity);
 
         //Add the city name into the banner text
         $("#cityName").text(currentCity);    
 
         //immedietely add the search as a button to refer to later
         addToHistory(currentCity);
-        saveHistory();
+        //saveHistory();
         getLocationApi(currentCity);
     }
 });
