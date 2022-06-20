@@ -15,7 +15,8 @@ var week = [
         temp: "",
         wind: "",
         humidity: "",
-        uvindex: ""
+        uvindex: "",
+        icon:""
     },
     {
         dateDay: dT.plus({days:1}).day,
@@ -24,6 +25,7 @@ var week = [
         temp: "",
         wind: "",
         humidity: "",
+        icon:""
     },
     {
         dateDay: dT.plus({days:2}).day,
@@ -32,6 +34,7 @@ var week = [
         temp: "",
         wind: "",
         humidity: "",
+        icon: ""
     },
     {
        dateDay: dT.plus({days:3}).day,
@@ -40,6 +43,7 @@ var week = [
        temp: "",
        wind: "",
        humidity: "",
+       icon: ""
     },
     {
         dateDay: dT.plus({days:4}).day,
@@ -48,6 +52,7 @@ var week = [
         temp: "",
         wind: "",
         humidity: "",
+        icon: ""
     },
     {
         dateDay: dT.plus({days:5}).day,
@@ -56,6 +61,7 @@ var week = [
         temp: "",
         wind: "",
         humidity: "",
+        icon: ""
     },
 ];
 
@@ -138,7 +144,10 @@ var getWeather = function(coordinates){
                 week[i].temp = data.daily[i].temp.day;
                 week[i].wind = data.daily[i].wind_speed;
                 week[i].humidity = data.daily[i].humidity;
-                week[i].uvindex = data.daily[i].uvi;
+                if (i==0)
+                    week[i].uvindex = data.daily[i].uvi;
+                week[i].icon = data.daily[i].weather[0].icon;
+                console.log(week[i].icon);
             }
             updateInfo();
         });
@@ -160,6 +169,9 @@ var updateInfo = function(index){
         $('.day'+i+'-temp').text('Temp: '+week[i].temp +'°');
         $('.day'+i+'-wind').text('Wind: '+week[i].wind +' MPH');
         $('.day'+i+'-humidity').text('Humidity: '+week[i].humidity +" %");
+        //<img class="w-icons"></img>
+        console.log(week[i].icon);
+        $('.day'+i+'-icons').attr('src','http://openweathermap.org/img/wn/'+week[i].icon+'@2x.png');
         if(i===0){
             console.log(week[0].uvindex);
             $('.day0-uv').html('UV index: <span class = "index">'+ week[0].uvindex + '</span>');

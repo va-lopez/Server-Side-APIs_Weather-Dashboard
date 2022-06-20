@@ -1,6 +1,7 @@
 #page-header{
- background-image: linear-gradient(to right, rgb(59, 110, 196), rgb(35, 5, 85));
- color: white;  
+    margin-top:10px;
+    background-image: linear-gradient(to right, rgb(59, 110, 196), rgb(35, 5, 85));
+    color: white;  
 }
 
 #title{
@@ -55,6 +56,13 @@
     font-size: 16px;
     line-height: 30px;
 }
+
+.weather-icon{
+    margin:0px auto 10px auto;
+    height: 50px;
+    width: 50px;
+    overflow:hidden;
+}
 .index{
     padding: 2px 5px 2px 5px;
     border-radius: 3px;
@@ -78,17 +86,18 @@
 
 #forcast-title{
     font-size: 16px;
-    font-weight:bolder;
+    font-weight:bold;
 }
 
 /*CSS for the cards with the weather information*/
 .card{
     background-color: rgb(51,71,90);
     color: white;
+    font-weight:bolder;
+    height: 300px;
 }
 
 .card-text{
-    line-height: 15px;
     font-size: 14px;
 }
 
@@ -99,7 +108,13 @@
     }
 }
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 670px){
+    .card-title{
+        font-size:12px;
+    }
+    .card-text{
+        font-size: 12px;
+    }
     #search-label{
         font-size: 16px;
     }
@@ -109,8 +124,8 @@
     }
 }
 
-@media only screen and (max-width: 576){
-    
+@media only screen and (max-width: 576px){
+
     #left-col, #right-col{
         padding: 0px 0px 0px 0px;
         margin: 0px;
@@ -120,8 +135,40 @@
         padding-right: 0px;
     }
 
+    #search-btn{
+        font-size:22px;
+        padding: 5px;
+    }
+
     #right-col{
         padding-left: 0px;
+    }
+    .card-title{
+        font-size:22px;
+    }
+    .card-text{
+        font-size: 18px;
+    }
+    #search-label{
+        font-size: 20px;
+    }
+
+    #forcast-title{
+        font-size:24px;
+    }
+
+    #banner-title{
+        font-size:22px;
+    }
+
+    .banner-text{
+        font-size:18px;
+    }
+}
+
+@media only screen and (max-width: 325px){
+    .card{
+        max-height: 400px;
     }
 }
 
