@@ -191,8 +191,10 @@ $("#search-btn").on("click", function(event){
         }
         currentCity = cityWords.join(" ");
 
-        if(cityHistory)
+        console.log(currentCity);
+        if(currentCity){
             cityHistory.push(currentCity);
+        }
         //Add the city name into the banner text
         $("#cityName").text(currentCity);    
 
