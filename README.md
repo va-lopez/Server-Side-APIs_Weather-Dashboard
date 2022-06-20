@@ -17,7 +17,5 @@ https://va-lopez.github.io/Server-Side-APIs_Weather-Dashboard/
 Link to screenshots:
 .assets/images/
 
-![Main Page](./assets/images/main_page.png)
-![Questions Page](./assets/images/questions.png)
-![Enter your HighScores](./assets/images/enterHS.png)
-![Display the High Scores](./assets/images/displayHs.png)
+![Main Page](./assets/images/homepage.png)
+![History List](./assets/images/history-list.png)

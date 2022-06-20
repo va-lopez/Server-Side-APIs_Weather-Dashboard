@@ -1,4 +1,4 @@
-var history = [];
+var cityHistory = [];
 var dateTime =luxon.DateTime;
 var dT= dateTime.now();
 var currentCity = "Austin";
@@ -65,45 +65,6 @@ var week = [
     },
 ];
 
-var setPage = function(){
-    //starting page when user hasn't entered a city yet.
-    currentCity = defaultCity;
-    $("#cityName").text(currentCity); 
-    //insert the stats for the weather of Austin
-    getLocationApi(currentCity);
-}
-
-//get any past history inputs from the local storage
-var loadHistory = function(){
-    //check to see if there is a history array already created, then sync it
-    history = JSON.parse(localStorage.getItem("history"));
-    if(history){
-        for(i=0; i<history.length(); i++){
-            addToHistory(history[i]);
-        }
-    }
-};
-
-//save searches to localStorage
-var saveHistory = function (){
-    localStorage.setItem("history", JSON.stringify(history));
-};
-
-//function to take a string value and create a button under the history list
-var addToHistory = function(cityInput){
-    //create a button for the search
-    var addCity = $("<button>")
-        .addClass("history-btn mt-3 btn")
-        .text(cityInput)
-        .attr({type:"button"});
-    //add the city name into the history array
-    $("#historyList").append(addCity);
-    //reset the input value
-    $("#search-input").val("");
-
-    saveHistory();
-};
-
 //function to get the current date and fill in the array
 var setDates = function(){
     //set banner date
@@ -115,6 +76,47 @@ var setDates = function(){
         var year =week[i].dateYear;
         $(".day-"+i +" h6").text(month+"/"+day+"/"+year);
     }
+};
+
+var setPage = function(){
+    //starting page when user hasn't entered a city yet.
+    currentCity = defaultCity;
+    $("#cityName").text(currentCity); 
+    //insert the stats for the weather of Austin
+    getLocationApi(currentCity);
+    loadHistory();
+    console.log(cityHistory);
+}
+
+//get any past history inputs from the local storage
+var loadHistory = function(){
+    cityHistory = JSON.parse(localStorage.getItem("cityHistory"));
+    if(!cityHistory)
+        return false;
+    console.log(cityHistory);
+    console.log(cityHistory[0]);
+    for(var i=0; i<cityHistory.length; i++){
+        addToHistory(cityHistory[i]);
+    }
+};
+
+//save searches to localStorage
+var saveHistory = function (){
+    localStorage.setItem("cityHistory", JSON.stringify(cityHistory));
+};
+
+//function to take a string value and create a button under the history list
+var addToHistory = function(cityInput){
+    //create a button for the search
+    var addCity = $("<button>")
+        .addClass("history-btn mt-3 btn")
+        .text(cityInput)
+        .attr({type:"button"});
+    //add the city name into the history array
+    $("#historyList").append(addCity);
+
+    //reset the input value
+    $("#search-input").val("");
 };
 
 //In order to use the openweather api to get weather stats, we need to get the lat and lon coordinates of the cities entered
@@ -147,7 +149,6 @@ var getWeather = function(coordinates){
                 if (i==0)
                     week[i].uvindex = data.daily[i].uvi;
                 week[i].icon = data.daily[i].weather[0].icon;
-                console.log(week[i].icon);
             }
             updateInfo();
         });
@@ -169,11 +170,8 @@ var updateInfo = function(index){
         $('.day'+i+'-temp').text('Temp: '+week[i].temp +'°');
         $('.day'+i+'-wind').text('Wind: '+week[i].wind +' MPH');
         $('.day'+i+'-humidity').text('Humidity: '+week[i].humidity +" %");
-        //<img class="w-icons"></img>
-        console.log(week[i].icon);
         $('.day'+i+'-icons').attr('src','http://openweathermap.org/img/wn/'+week[i].icon+'@2x.png');
         if(i===0){
-            console.log(week[0].uvindex);
             $('.day0-uv').html('UV index: <span class = "index">'+ week[0].uvindex + '</span>');
             updateUVColor();
         }
@@ -197,11 +195,14 @@ $("#search-btn").on("click", function(event){
         }
         currentCity = cityWords.join(" ");
 
+        cityHistory.push(currentCity);
+
         //Add the city name into the banner text
         $("#cityName").text(currentCity);    
 
         //immedietely add the search as a button to refer to later
         addToHistory(currentCity);
+        saveHistory();
         getLocationApi(currentCity);
     }
 });
