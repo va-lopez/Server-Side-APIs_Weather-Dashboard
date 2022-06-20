@@ -84,8 +84,6 @@ var setPage = function(){
     $("#cityName").text(currentCity); 
     //insert the stats for the weather of Austin
     getLocationApi(currentCity);
-    loadHistory();
-    console.log(cityHistory);
 }
 
 //get any past history inputs from the local storage
@@ -196,7 +194,6 @@ $("#search-btn").on("click", function(event){
         currentCity = cityWords.join(" ");
 
         cityHistory.push(currentCity);
-
         //Add the city name into the banner text
         $("#cityName").text(currentCity);    
 
@@ -214,5 +211,6 @@ $(document).on('click', '#historyList .btn', function(){
         getLocationApi(currentCity);
 });
 
+loadHistory();
 setDates();
 setPage();
